@@ -7,21 +7,20 @@ export default function Home() {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        const getArticles = async () => {
-        const data = await fetchArticles();
-        setArticles(data);
-        setIsLoading(false);
-        };
-        getArticles();
+        fetchArticles().then((data)=>{
+            setArticles(data)
+            setIsLoading(false);
+        })
       },[]);
+      if(isLoading) {return <div>Is loading</div>}
       return(
 
-        isLoading ? (
-            <div>Is loading</div>
-          ) : (
-            <ul className='article-list'>
-            {articles.articles.map((article) => (
+   
+        
+            <div className="article-list-container"><ul className='article-list'>
+            {articles.map((article) => (
               <ArticleCard article={article} key={article.article_id} />
             ))}
           </ul>
-          ))}
+          </div>
+          )}
