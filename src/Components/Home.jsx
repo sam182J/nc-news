@@ -1,5 +1,5 @@
 import { useState,useEffect } from "react";
-import fetchArticles from '../api';
+import {fetchArticles} from '../api';
 import ArticleCard from './ArticleCard';
 
 export default function Home() {

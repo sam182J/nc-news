@@ -43,3 +43,15 @@ p {
   min-width: 350px;
   
 }
+.article-page {
+  padding: 5%;
+
+}
+.article-body {
+  padding: 5%;
+
+}
+.article-page-image {
+  max-width: 100%;
+  height:auto
+}
