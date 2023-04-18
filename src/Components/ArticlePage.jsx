@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import {useParams } from "react-router-dom";
 import {fetchArticleById} from '../api';
 import moment from 'moment';
+import CommentSection from "./CommentsSection";
 
 
 export default function ArticlePage() {
@@ -19,7 +20,7 @@ export default function ArticlePage() {
   const convertedDate=moment(article.created_at).format("DD.MM.YYYY")
 
   if(isLoading) {return <div>Is loading</div>}
-      return(
+      return(<div>
     <div className="article-page">
       <h2>{article.title}</h2>
       <p>{convertedDate}</p>
@@ -30,6 +31,8 @@ export default function ArticlePage() {
       <p>Votes :{article.votes}</p>
       
      
+    </div>
+    <div><CommentSection article_id={article_id}/></div>
     </div>
   );
 }
