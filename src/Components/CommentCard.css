@@ -1,0 +1,14 @@
+.CommentCard{
+    display: inline-block;
+    background-color: rgb(220, 249, 239);
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: 2px; 
+    
+    align-items: center;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    width: 100%;
+  min-height: auto;
+  }
