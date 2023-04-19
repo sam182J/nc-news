@@ -14,3 +14,8 @@ export async function fetchCommentsByArticleId(id) {
   const { data } = await ncNewsApi.get(`/articles/${id}/comments`);
   return data.comments;
 }
+
+export async function updateArticleVotes(id, votes) {
+  const { data } = await ncNewsApi.patch(`/articles/${id}`, votes);
+  return data.article;
+}
