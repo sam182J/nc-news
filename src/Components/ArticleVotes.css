@@ -1,0 +1,12 @@
+.vote-section {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 1em;
+    margin: 1em;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: aquamarine;
+
+}

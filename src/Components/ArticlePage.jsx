@@ -3,6 +3,7 @@ import {useParams } from "react-router-dom";
 import {fetchArticleById} from '../api';
 import moment from 'moment';
 import CommentSection from "./CommentsSection";
+import ArticleVotes from "./ArticleVotes";
 
 
 export default function ArticlePage() {
@@ -28,10 +29,11 @@ export default function ArticlePage() {
       <p className="article-body">{article.body}</p>
       <img className="article-page-image" src={article.article_img_url} alt={article.title}/>
       <p>Comments :{article.comment_count}</p>
-      <p>Votes :{article.votes}</p>
+      
       
      
     </div>
+    <div><ArticleVotes article={article}/></div>
     <div><CommentSection article_id={article_id}/></div>
     </div>
   );

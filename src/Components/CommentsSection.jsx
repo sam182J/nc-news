@@ -25,5 +25,6 @@ export default function CommentSection({article_id}) {
           </ul>
           </div>
     );}
+    return <p>No comments</p>
   }
   
