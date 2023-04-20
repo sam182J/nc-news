@@ -6,7 +6,7 @@ import CommentSection from "./CommentsSection";
 import ArticleVotes from "./ArticleVotes";
 
 
-export default function ArticlePage() {
+export default function ArticlePage({user}) {
   
   const [article, setArticle] = useState({});
   const { article_id } = useParams();
@@ -34,7 +34,7 @@ export default function ArticlePage() {
      
     </div>
     <div><ArticleVotes article={article}/></div>
-    <div><CommentSection article_id={article_id}/></div>
+    <div><CommentSection article_id={article_id} user = {user}/></div>
     </div>
   );
 }

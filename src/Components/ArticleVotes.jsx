@@ -27,7 +27,7 @@ export default function ArticleVotes({article}) {
   
     
         return (<div className="vote-section">
-        <h3>Please vote   </h3>
+        <h3>Please vote</h3>
         <p>Votes : {article.votes + localVotes}</p>
         { !voted ? (<div> 
         <button onClick={(event) => handleClick(event, -5)}>Hate!</button>

@@ -19,3 +19,8 @@ export async function updateArticleVotes(id, votes) {
   const { data } = await ncNewsApi.patch(`/articles/${id}`, votes);
   return data.article;
 }
+
+export async function createNewComment(id, comment) {
+  const { data } = await ncNewsApi.post(`/articles/${id}/comments`, comment);
+  return data.comment;
+}

@@ -1,0 +1,9 @@
+.comment-form {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 1em;
+    margin: 1em;
+    justify-content: center;
+
+}
