@@ -8,7 +8,7 @@ export default function CommentSection({article_id, user}) {
   
     const [comments, setComments] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [newComment,setNewComment]= useState(null)
+    const [newComment,setNewComment]= useState([])
     
     useEffect(() => {
         fetchCommentsByArticleId(article_id).then((data)=>{
@@ -24,16 +24,19 @@ export default function CommentSection({article_id, user}) {
                 <NewComment  article_id ={article_id} user ={user} setNewComment={setNewComment}/>
                 <ul className='comment-list'>
                     {newComment? (
-                <li>
-        <div className ="CommentCard">
-          
-          <p>{user} : {newComment.body}</p>
-         
-          <p> Posted : just now!</p>
-          <p>Votes:0</p>
-          
-        </div>
-    </li>) : null }
+                        newComment.map((comment) => (
+                            <li>
+                            <div className ="CommentCard">
+                              
+                              <p>{user} : {comment.body}</p>
+                             
+                              <p> Posted : just now!</p>
+                              <p>Votes:0</p>
+                              
+                            </div>
+                        </li>))
+
+               ): null }
                 
             {comments.map((comment) => (
               <CommentCard comment={comment} key={comment.comment_id} />

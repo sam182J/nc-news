@@ -5,27 +5,32 @@ import  "./NewComment.css"
 export default function NewCommet({article_id, user,setNewComment}) {
   const [commentBody, setCommentBody] = useState('');
   
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleSubmit =  async (event) => {
     event.preventDefault();
-    setNewComment({
-        body: commentBody,
+    setIsSubmitting(true)
+    setNewComment((currentComments)=>{return [
+        {body: commentBody,
         username: user,
-        })
+        },...currentComments]})
      createNewComment(article_id,{
         body: commentBody,
         username: user,})
-        .then(()=>{setCommentBody('')});
+        .then(()=>{setCommentBody(''); 
+        setIsSubmitting(false)});
       
 
   };
-  return (
-    
+  return ( <div>
+   
     <form className="comment-form" onSubmit={handleSubmit}>
         <label>New comment</label>
         <textarea value={commentBody} onChange={(event) => setCommentBody(event.target.value)} required />
-      <button type="submit">Submit</button>
+      <button type="submit" disabled={isSubmitting}>  Submit</button>
       
       
     </form>
+    </div>
   );
 }
