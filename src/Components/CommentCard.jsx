@@ -1,7 +1,7 @@
 import moment from 'moment';
 import './CommentCard.css';
 export default function CommentCard({ comment }) {
-    const convertedDate=moment(comment.created_at).format("DD.MM.YYYY")
+    const convertedDate=moment(comment.created_at).format("HH:mm DD.MM.YYYY")
   return (
 
     <li>
@@ -9,7 +9,7 @@ export default function CommentCard({ comment }) {
           
           <p>{comment.author} : {comment.body}</p>
          
-          <p>{convertedDate}</p>
+          <p>Posted : {convertedDate}</p>
           <p>Votes:{comment.votes}</p>
           
         </div>

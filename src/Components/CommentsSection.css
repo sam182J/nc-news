@@ -1,9 +1,14 @@
 .comment-list-container{
     
+    width : 100%;
     background-color: aquamarine;
+    justify-content: center;
   
   }
   .comment-list {
+    list-style: none;
+ 
+    
     display: flex;
     flex-wrap: wrap;
     list-style: none;
