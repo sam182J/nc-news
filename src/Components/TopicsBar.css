@@ -9,3 +9,9 @@
     display: block;
     cursor: pointer;
   }
+
+  .selected {
+    background-color:aquamarine;
+    color: #1a0707;
+    border-color: #007bff;
+  }

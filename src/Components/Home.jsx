@@ -28,7 +28,7 @@ export default function Home() {
 
    
         <div className="Home">
-            <TopicsBar setChosenTopic ={setChosenTopic} topics={topics}/>
+            <TopicsBar setChosenTopic ={setChosenTopic} topics={topics} chosenTopic={chosenTopic}/>
             <div className="article-list-container">
                 
             <ul className='article-list'>
