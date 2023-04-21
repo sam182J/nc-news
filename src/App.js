@@ -12,6 +12,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/Articles/topics/:slug" element={<Home />} />
         <Route
           path="/Articles/:article_id"
           element={<ArticlePage user={user} />}

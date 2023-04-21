@@ -1,0 +1,17 @@
+.topics-bar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    list-style: none;
+  }
+  
+  .topics-bar button {
+    display: block;
+    cursor: pointer;
+  }
+
+  .selected {
+    background-color:aquamarine;
+    color: #1a0707;
+    border-color: #007bff;
+  }
